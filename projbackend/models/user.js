@@ -40,7 +40,7 @@ const userSchema =new  mongoose.Schema(
         default:[] //by default no  order
     }
 
-})
+},{timestamps:true}) 
 
 //virtual are for the setters and getters
 //using here virtual  we defined the new field in mongoose
