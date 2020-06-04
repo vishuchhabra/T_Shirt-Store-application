@@ -4,7 +4,13 @@ require('dotenv').config() //configuring the dotenv in single line
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
+const bodyparser  =require('body-parser')
+const cors = require('cors')
+const cookieParser = require('cookie-parser')
 const port = process.env.PORT || 4000
+const authRoutes = require("./routes/auth")
+
+
 
 //connecting the local database
 mongoose.connect(process.env.DATABASE, {useNewUrlParser: true, useUnifiedTopology: true , useCreateIndex:true})
@@ -17,6 +23,17 @@ mongoose.connect(process.env.DATABASE, {useNewUrlParser: true, useUnifiedTopolog
 {
    console.log(err)
 })
+
+
+//general middlewares
+app.use(bodyparser.json())
+app.use(cookieParser())
+app.use(cors())
+
+
+//backend routes
+app.use('/api',authRoutes)
+
 
 
 //listening the port 
