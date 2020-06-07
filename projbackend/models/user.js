@@ -31,7 +31,7 @@ const userSchema =new  mongoose.Schema(
         required:true
     },
     salt : String,
-    role:{ //for the role
+    role:{ //for the role 0-regular user , 1 - for admin
         type:Number,
         default:0
     },
@@ -58,7 +58,7 @@ userSchema.virtual("password")
   })
 
 //method are basically operations on schema
-userSchema.methods = {
+userSchema.methods = { 
     authenticate : function(plainpassword)
     {
         return this.securePassword(plainpassword) === this.encry_password //return true and false

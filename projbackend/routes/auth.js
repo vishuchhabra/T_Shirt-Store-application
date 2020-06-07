@@ -1,6 +1,6 @@
 const express =  require('express')
 const router = express.Router()
-const {signup} =require('../controllers/auth')
+const {signup, signin, signout, isSignedIn} =require('../controllers/auth')
 const { check, validationResult } = require('express-validator')
 
 
@@ -19,6 +19,28 @@ router.post('/signup',[
     .withMessage('Password should not be empty, minimum eight characters, at least one letter, one number and one special character')
     
 ] ,signup)
+
+
+//sign in route
+router.post('/signin',[
+    
+    check("email").isEmail().withMessage('Invalid Email'),
+    check('password')
+ 
+    .exists()
+    .withMessage('Incorrect Password')
+    .not().isIn(['123', 'password', 'god']).withMessage('Incorrect Password') 
+    .isLength({ min: 8 })
+    .withMessage('Incorrect Password')
+    .matches(/^(?=.*[A-Za-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$.!%*#?&])[A-Za-z\d@$.!%*#?&]{8,}$/)  //for demanding the correct pattern for the password
+    .withMessage('Incorrect Password')
+    
+] ,signin)
+
+//sign out route
+router.get('/signout',signout)
+
+
 
 
 //exporting the module 
