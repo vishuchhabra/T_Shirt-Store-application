@@ -1,3 +1,6 @@
 #for environment variable 
 .env
 
+#for node modules
+node_modules
+
