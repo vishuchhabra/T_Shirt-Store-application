@@ -11,11 +11,19 @@ exports.signup = (req, res)=>
         })
     }
 
+    var pass= (req.body.password).toLowerCase()
+    var name = (req.body.name).toLowerCase()
+    if(pass.includes(name))  //for checking that name should not present in the password
+    {
+        return res.status(400).json({
+            err :"Do not use name in password for Security purposes"
+        })
+    }
     const user = new User(req.body) 
     user.save((err ,user)=>
     {
         if(err){
-          return  res.status(400).json(
+          return  res.status(400).json(  // Error handling for the unique email 
           {
                   err: "Might be user Record already existed"
           }) 

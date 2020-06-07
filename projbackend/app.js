@@ -9,8 +9,7 @@ const cors = require('cors')
 const cookieParser = require('cookie-parser')
 const port = process.env.PORT || 4000
 const authRoutes = require("./routes/auth")
-
-
+const morgan = require('morgan')
 
 //connecting the local database
 mongoose.connect(process.env.DATABASE, {useNewUrlParser: true, useUnifiedTopology: true , useCreateIndex:true})
@@ -24,17 +23,14 @@ mongoose.connect(process.env.DATABASE, {useNewUrlParser: true, useUnifiedTopolog
    console.log(err)
 })
 
-
 //general middlewares
+app.use(morgan('dev')) //for printing the incoming requests status
 app.use(bodyparser.json())
 app.use(cookieParser())
 app.use(cors())
 
-
 //backend routes
 app.use('/api',authRoutes)
-
-
 
 //listening the port 
 app.listen(port,()=>
