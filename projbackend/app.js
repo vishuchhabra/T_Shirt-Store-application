@@ -12,7 +12,7 @@ const morgan = require('morgan')
 //my routes
 const authRoutes = require("./routes/auth")
 const userRoutes = require("./routes/user")
-
+const categoryRoutes = require("./routes/category")
 
 //connecting the local database
 mongoose.connect(process.env.DATABASE, {useNewUrlParser: true, useUnifiedTopology: true , useCreateIndex:true})
@@ -35,6 +35,8 @@ app.use(cors())
 //backend routes
 app.use('/api',authRoutes)
 app.use('/api',userRoutes)
+app.use('/api',categoryRoutes)
+
 //listening the port 
 app.listen(port,()=>
 {

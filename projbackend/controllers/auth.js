@@ -125,7 +125,8 @@ exports.isSignedIn = expressJwt({  //for validating the jwt token in cokkie   //
 
 exports.isAuthenticated = (req, res , next)=>
 {
-    let checker = req.profile  && req.auth && req.profile._id ===req.auth._id
+    let checker = req.profile  && req.auth && req.profile._id ==req.auth._id  //== does not check data type 
+    // === this also  compare the data type also
     if(!checker)
     {
         return res.status(403).json({
@@ -137,9 +138,9 @@ exports.isAuthenticated = (req, res , next)=>
 
 exports.isAdmin  = (req, res , next)=>
 {
-    if(req.profile.role===0)
+    if(!req.profile.role)
     {
-        return res.status(43).json(
+        return res.status(403).json(
         {
           error:"You are not ADMIN, Access denied"
         })
