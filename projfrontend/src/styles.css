@@ -1,0 +1,12 @@
+body{
+  background-color: black;
+}
+
+.btn,
+.jumbotron,
+.nav :hover {
+  border-radius: 0px;
+}
+
+
+
