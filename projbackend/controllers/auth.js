@@ -19,7 +19,7 @@ exports.signup =async  (req, res)=>
     if(pass.includes(name))  //for checking that name should not present in the password
     {
         return res.status(400).json({
-            err :"Do not use name in password for Security purposes"
+            error :"Do not use name in password for Security purposes"
         })
     }
     const user = new User(req.body) 
@@ -28,7 +28,7 @@ exports.signup =async  (req, res)=>
         if(err){
           return  res.status(400).json(  // Error handling for the unique email 
           {
-                  err: "Might be user Record already existed"
+                  error: "Might be user Record already existed"
           }) 
         }
         res.json({
@@ -66,14 +66,14 @@ exports.signin = async (req, res)=>
           
           return res.status(400).json(
           {
-            err:"User Reocrd does not exist"
+            error:"User Reocrd does not exist"
           })
        }
        if(!user.authenticate(password))  //method actually works on the instance of the schema 
        {
           return res.status(401).json(
           {
-              err: "Email and password does not exist"
+              error: "Email and password does not exist"
           })
        }
       //create token with jwt 

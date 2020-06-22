@@ -1,19 +1,16 @@
-body{
-  background-color: black;
-}
-
 .btn,
 .jumbotron,
 .nav :hover {
   border-radius: 0px;
 }
 
-footer{
-  position: relative;
-  bottom: 0px;
-  right: 0px;
-  left:0px
+body {
+  background: #343a40;
 }
 
-
-
+footer {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+}
