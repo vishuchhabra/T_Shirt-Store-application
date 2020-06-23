@@ -34,7 +34,9 @@ const AddProduct =()=>{
           </div>
           <div className="form-group">
             <input
+              
               onChange={handleChange("name")}
+              type="text"
               name="photo"
               className="form-control"
               placeholder="Name"
