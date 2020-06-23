@@ -1,20 +1,24 @@
-const User = require('../models/user')
-const router = require('express').Router()
+const express = require("express");
+const router = express.Router();
 
-const {getUserById, getUser,updateUser,userPurchaseList} = require('../controllers/user')
-const {isSignedIn,isAdmin, isAuthenticated} =require('../controllers/auth')
+const {
+  getUserById,
+  getUser,
+  updateUser,
+  userPurchaseList
+} = require("../controllers/user");
+const { isSignedIn, isAuthenticated, isAdmin } = require("../controllers/auth");
 
+router.param("userId", getUserById);
 
-//this will find the user information based on userId //important 
-router.param("userId",getUserById) 
+router.get("/user/:userId", isSignedIn, isAuthenticated, getUser);
+router.put("/user/:userId", isSignedIn, isAuthenticated, updateUser);
 
-router.get("/user/:userId",isSignedIn,isAuthenticated,getUser)
+router.get(
+  "/orders/user/:userId",
+  isSignedIn,
+  isAuthenticated,
+  userPurchaseList
+);
 
-//for updating the user information
-
-router.put("/user/:userId",isSignedIn,isAuthenticated,updateUser) //but it will not update the password 
-
-router.put("orders/user/:userId",isSignedIn,isAuthenticated,userPurchaseList) //but it will not update the password 
-
-//exporting the router
-module.exports = router
+module.exports = router;

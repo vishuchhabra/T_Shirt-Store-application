@@ -1,11 +1,12 @@
-import  React from 'react'
-import Base from '../core/Base'
-const ManageCategories =()=>{
-  return (
-      <Base className="text-white">
-          your assigment
-      </Base>
-  )
-}
+import React from "react";
+import Base from "../core/Base";
 
-export default ManageCategories
+const ManageCategories = () => {
+  return (
+    <Base>
+      <h1 className="text-white">Your assignment</h1>
+    </Base>
+  );
+};
+
+export default ManageCategories;
