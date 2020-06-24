@@ -3,6 +3,8 @@ import Base from "../core/Base";
 import { Link,Redirect } from "react-router-dom";
 import { getCategories, createaProduct } from "./helper/adminapicall";
 import { isAutheticated } from "../auth/helper/index";
+import { API } from "../backend";
+
 
 const AddProduct = () => {
   const { user, token } = isAutheticated();
@@ -89,17 +91,11 @@ const AddProduct = () => {
       
     <h4>{createdProduct} created successfully</h4>
       
-      
     </div>
      
     
   );
-  const warningMessage = () => {
-    if (error) {
-     return <h4 className="text-danger">Failed to create Product this Product</h4>;
-    }
-  };
-   const createProductForm = () => (
+  const createProductForm = () => (
     <form>
       <span>Post photo</span>
       <div className="form-group">
