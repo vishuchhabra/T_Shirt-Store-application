@@ -4,9 +4,9 @@ import { signout, isAutheticated } from "../auth/helper";
 
 const currentTab = (history, path) => {
   if (history.location.pathname === path) {
-    return { color: "#2ecc72" };
-  } else {
     return { color: "#FFFFFF" };
+  } else {
+    return { color: "#2ecc72" };
   }
 };
 
@@ -15,7 +15,7 @@ const Menu = ({ history }) => (
     <ul className="nav nav-tabs bg-dark fixed-top">
       <li className="nav-item">
         <Link style={currentTab(history, "/")} className="nav-link" to="/">
-          Home
+           <h4> Home</h4>
         </Link>
       </li>
       <li className="nav-item">
@@ -24,7 +24,8 @@ const Menu = ({ history }) => (
           className="nav-link"
           to="/cart"
         >
-          Cart
+          <h4>Cart</h4>
+          
         </Link>
       </li>
       {isAutheticated() && isAutheticated().user.role===0 && (
@@ -34,7 +35,8 @@ const Menu = ({ history }) => (
            className="nav-link"
            to="/user/dashboard"
          >
-           U. Dashboard
+           <h4>Dashboard</h4>
+          
          </Link>
        </li>
       )}
@@ -46,7 +48,8 @@ const Menu = ({ history }) => (
             className="nav-link"
             to="/admin/dashboard"
           >
-            A. Dashboard
+            <h4>Dashboard</h4>
+
           </Link>
         </li>  
         )
@@ -59,7 +62,8 @@ const Menu = ({ history }) => (
              className="nav-link"
              to="/signup"
            >
-             Signup
+             <h4>Signup</h4>
+             
            </Link>
          </li>
          <li className="nav-item">
@@ -68,21 +72,23 @@ const Menu = ({ history }) => (
              className="nav-link"
              to="/signin"
            >
-             Sign In
+             <h4>Sign In</h4>
+             
            </Link>
          </li>
          </Fragment>
       )}
       {isAutheticated() && (
          <li className="nav-item">
-        <span className="nav-link text-danger" onClick={
+        <span style={{"color":"#f1c40f"}} className="nav-link  " onClick={
           ()=> {
             signout(()=>{
               history.push("/")
             })
           }
         }>
-          Signout
+          <h4>Signout</h4>
+        
         </span>
 
       </li>

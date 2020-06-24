@@ -114,7 +114,7 @@ const UpdateProduct = ({match}) => {
 
     >
       
-    <h4>{createdProduct} updated successfully</h4>
+    <h4>{createdProduct} Updated Successfully</h4>
       
     </div>
      
@@ -122,7 +122,7 @@ const UpdateProduct = ({match}) => {
   );
   const warningMessage = () => {
     if (error) {
-      return <h4 className="text-danger">Failed to update this Product</h4>;
+      return <h4 className="text-danger">Failed To Update This Product</h4>;
     }
   };
   const loadingMessage = () => {
@@ -227,7 +227,7 @@ const UpdateProduct = ({match}) => {
   return (
     <Base
       title="Update a Product Here!"
-      description="Welcome to product updation section"
+      description="Welcome To Product Updation Section"
       className="container bg-success p-4"
     >
       <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3">

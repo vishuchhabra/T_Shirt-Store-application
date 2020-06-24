@@ -65,7 +65,7 @@ const AdminDashBoard =()=>{
 
 
     return (
-        <Base title="WelCome to Admin Area" description="Manage all of your products here"
+        <Base title="WelCome To Admin Area" description="Manage All Of Your Products Here"
         className="container bg-success p-4">
             <div className="row">
                 <div className="col-3">

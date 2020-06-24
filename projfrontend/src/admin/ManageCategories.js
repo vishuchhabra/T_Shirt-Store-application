@@ -39,8 +39,8 @@ const ManageCategories = () => {
   }
 
   return (
-    <Base title="Welcome admin" description="Manage Categories here">
-    <h2 className="mb-4">Go  to Admin Home!!!</h2>
+    <Base title="Welcome Admin" description="Manage Categories Here">
+    <h2 className="mb-4">Go  To Admin Home!!!</h2>
     <Link className="btn btn-danger" to={`/admin/dashboard`}>
       <span className="">Admin Home</span>
     </Link>

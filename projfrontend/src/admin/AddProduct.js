@@ -89,7 +89,7 @@ const AddProduct = () => {
 
     >
       
-    <h4>{createdProduct} created successfully</h4>
+    <h4>{createdProduct} Created Successfully</h4>
       
     </div>
      
@@ -97,7 +97,7 @@ const AddProduct = () => {
   );
   const warningMessage = () => {
     if (error) {
-      return <h4 className="text-danger">Failed to create Product</h4>;
+      return <h4 className="text-danger">Failed To Create Product</h4>;
     }
   };
   const loadingMessage = () => {
@@ -125,7 +125,7 @@ const AddProduct = () => {
 
   const createProductForm = () => (
     <form>
-      <span>Post photo</span>
+      <span>Post Photo</span>
       <div className="form-group">
         <label className="btn btn-block btn-success">
           <input
@@ -201,8 +201,8 @@ const AddProduct = () => {
 
   return (
     <Base
-      title="Add a product here!"
-      description="Welcome to product creation section"
+      title="Add a Product Here!"
+      description="Welcome To Product Creation Section"
       className="container bg-success p-4"
     >
       <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3">

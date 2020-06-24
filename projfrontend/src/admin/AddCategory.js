@@ -56,20 +56,20 @@ const AddCategory = () => {
 
   const successMessage = () => {
     if (success) {
-      return <h4 className="text-success">Category created successfully</h4>;
+      return <h4 className="text-success">Category Created Successfully</h4>;
     }
   };
 
   const warningMessage = () => {
     if (error) {
-      return <h4 className="text-danger">Failed to create category</h4>;
+      return <h4 className="text-danger">Failed To Create Category</h4>;
     }
   };
 
   const myCategoryForm = () => (
     <form>
       <div className="form-group">
-        <p className="lead">Enter the category</p>
+        <p className="lead">Enter The Category</p>
         <input
           type="text"
           className="form-control my-3"
@@ -88,8 +88,8 @@ const AddCategory = () => {
 
   return (
     <Base
-      title="Create a category here"
-      description="Add a new category for new tshirts"
+      title="Create a Category Here"
+      description="Add a New Category For New T-shirts"
       className="container bg-success p-4"
     >
       <div className="row bg-white rounded">

@@ -58,14 +58,14 @@ const UpdateCategory = ( {match}) => {
 
   const successMessage = () => {
     if (success) {
-      return <h4 className="text-success">Category Updated successfully</h4>;
+      return <h4 className="text-success">Category Updated Successfully</h4>;
     }
   };
 
   const warningMessage = () => {
     if (error) {
       console.log(error)
-      return <h4 className="text-danger">Failed to update category</h4>;
+      return <h4 className="text-danger">Failed To Update Category</h4>;
     }
   };
 
@@ -91,8 +91,8 @@ const UpdateCategory = ( {match}) => {
 
   return (
     <Base
-      title="Update a category here"
-      description="Add a New Name for Category"
+      title="Update a Category Here"
+      description="Add a New Name For Category"
       className="container bg-success p-4"
     >
       <div className="row bg-white rounded">
