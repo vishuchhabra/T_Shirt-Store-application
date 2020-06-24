@@ -8,6 +8,7 @@ const UpdateCategory = ( {match}) => {
   const [name, setName] = useState("");
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [loading ,setLoading] = useState(false)
 
   const { user, token } = isAutheticated();
 
@@ -28,19 +29,32 @@ const UpdateCategory = ( {match}) => {
     event.preventDefault();
     setError("");
     setSuccess(false);
+    setLoading(true);
 
     //backend request fired
     
     updatethisCategory(match.params.categoryId, user._id, token,{name}).then(data => {
       if (data.error) {
         setError(true);
+        setLoading(false)
       } else {
         setError("");
         setSuccess(true);
         setName("");
+        setLoading(false)
       }
     });
   };
+  const loadingMessage = () => {
+    return (
+      loading && (
+        <div className="alert alert-info">
+          <h2>Loading...</h2>
+        </div>
+      )
+    );
+  };
+
 
   const successMessage = () => {
     if (success) {
@@ -83,6 +97,7 @@ const UpdateCategory = ( {match}) => {
     >
       <div className="row bg-white rounded">
         <div className="col-md-8 offset-md-2">
+          {loadingMessage()}
           {successMessage()}
           {warningMessage()}
           {myCategoryForm()}

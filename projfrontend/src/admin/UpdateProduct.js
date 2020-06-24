@@ -83,7 +83,7 @@ const UpdateProduct = ({match}) => {
     
     updateProduct(match.params.productId,user._id, token, formData).then(data => {
       if (data.error) {
-        setValues({ ...values, error: data.error ,getaRedirect:true});
+        setValues({ ...values, error: data.error ,loading:false ,getaRedirect:true});
       } else {
         setValues({
           ...values,
@@ -120,6 +120,34 @@ const UpdateProduct = ({match}) => {
      
     
   );
+  const warningMessage = () => {
+    if (error) {
+      return <h4 className="text-danger">Failed to update this Product</h4>;
+    }
+  };
+  const loadingMessage = () => {
+    return (
+      loading && (
+        <div className="alert alert-info">
+          <h2>Loading...</h2>
+        </div>
+      )
+    );
+  };
+
+  const RedirectTime =() =>{
+    setTimeout(function(){
+      window.location.href = '/admin/dashboard';
+   }, 1000);
+   }
+  
+   const redirect = () => {
+     
+       if( getaRedirect ){
+         return  RedirectTime()
+        } 
+   }
+  
   const createProductForm = () => (
     <form>
       <span>Post photo</span>
@@ -198,8 +226,8 @@ const UpdateProduct = ({match}) => {
 
   return (
     <Base
-      title="Add a product here!"
-      description="Welcome to product creation section"
+      title="Update a Product Here!"
+      description="Welcome to product updation section"
       className="container bg-success p-4"
     >
       <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3">
@@ -207,7 +235,10 @@ const UpdateProduct = ({match}) => {
       </Link>
       <div className="row bg-dark text-white rounded">
         <div className="col-md-8 offset-md-2">
+          {loadingMessage()}
+          {redirect()}
           {successMessage()}
+          {warningMessage()}
           {createProductForm()}
           
           </div>

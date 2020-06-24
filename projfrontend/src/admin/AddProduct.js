@@ -58,7 +58,7 @@ const AddProduct = () => {
     setValues({ ...values, error: "", loading: true });
     createaProduct(user._id, token, formData).then(data => {
       if (data.error) {
-        setValues({ ...values, error: data.error ,getaRedirect:true});
+        setValues({ ...values, error: data.error ,loading:false,getaRedirect:true});
       } else {
         setValues({
           ...values,
@@ -95,6 +95,34 @@ const AddProduct = () => {
      
     
   );
+  const warningMessage = () => {
+    if (error) {
+      return <h4 className="text-danger">Failed to create Product</h4>;
+    }
+  };
+  const loadingMessage = () => {
+    return (
+      loading && (
+        <div className="alert alert-info">
+          <h2>Loading...</h2>
+        </div>
+      )
+    );
+  };
+
+ const RedirectTime =() =>{
+  setTimeout(function(){
+    window.location.href = '/admin/dashboard';
+ }, 1000);
+ }
+
+ const redirect = () => {
+   
+     if( getaRedirect ){
+       return  RedirectTime()
+      } 
+ }
+
   const createProductForm = () => (
     <form>
       <span>Post photo</span>
@@ -182,6 +210,9 @@ const AddProduct = () => {
       </Link>
       <div className="row bg-dark text-white rounded">
         <div className="col-md-8 offset-md-2">
+          {loadingMessage()}
+          {redirect()}
+          {warningMessage()}
           {successMessage()}
           {createProductForm()}
           
