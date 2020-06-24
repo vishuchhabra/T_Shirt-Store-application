@@ -1,5 +1,5 @@
 #for environment variable 
-.env
+#.env  we can add by using this
 
 #for node modules
 node_modules
