@@ -55,6 +55,10 @@ export const cartEmpty = next =>{
     if(typeof window !==undefined  && isAutheticated()){
         const  {user: {_id}} = isAutheticated()
         localStorage.removeItem(`${_id}`)
+        let cart =[]
+        localStorage.setItem(`${_id}`, JSON.stringify(cart))
+        
+
         next()
     }
 }

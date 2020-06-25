@@ -5,6 +5,8 @@ import Base from "./Base";
 import Card from "./card";
 import { loadCart } from "./helper/CartHelper";
 import { isAutheticated } from "../auth/helper";
+import StripeCheckout from "./StripeCheckout";
+
 
 
 
@@ -65,8 +67,10 @@ const  Cart = ()=> {
           </div>
           <div className="col-2"></div>
           <div className="col-5">
-
-              {loadCheckout()}
+        <StripeCheckout
+        products ={products}
+        setReload ={setReload}
+        />
               
           </div>
    

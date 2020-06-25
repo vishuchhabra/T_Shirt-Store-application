@@ -8,6 +8,8 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const morgan = require('morgan')
 
+//stripe
+const StripeRoutes = require('./routes/stripe')
 //My routes
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
@@ -39,6 +41,7 @@ app.use("/api", userRoutes);
 app.use("/api", categoryRoutes);
 app.use("/api", productRoutes);
 app.use("/api", orderRoutes);
+app.use('/api',StripeRoutes)
 
 //PORT
 const port = process.env.PORT || 4000;
