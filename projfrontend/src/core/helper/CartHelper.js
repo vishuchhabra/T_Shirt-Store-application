@@ -1,8 +1,11 @@
+import { isAutheticated } from "../../auth/helper"
+
 export const addItemToCart = (item,next)=>{
     let cart = []
-    if(typeof window !==undefined){
-        if(localStorage.getItem("cart")){
-            cart = JSON.parse(localStorage.getItem('cart'))
+    if(typeof window !==undefined && isAutheticated() ){
+        const  {user: {_id}} = isAutheticated()
+        if(localStorage.getItem(`${_id}`)){
+            cart = JSON.parse(localStorage.getItem(`${_id}`))
         }
         cart.push({
             ...item,
@@ -10,15 +13,19 @@ export const addItemToCart = (item,next)=>{
 
 
         })
-        localStorage.setItem("cart", JSON.stringify(cart))
+        localStorage.setItem(`${_id}`, JSON.stringify(cart))
         next()
+    }
+    else{
+        window.location.href = '/signin';
     }
 }
 
 export const loadCart  = () =>{
-    if(typeof window !==undefined){
-        if(localStorage.getItem("cart")){
-            return JSON.parse(localStorage.getItem('cart'))
+    if(typeof window !==undefined   && isAutheticated()){
+        const  {user: {_id}} = isAutheticated()
+        if(localStorage.getItem(`${_id}`)){
+            return JSON.parse(localStorage.getItem(`${_id}`))
         }
     }
 
@@ -26,9 +33,10 @@ export const loadCart  = () =>{
 
 export const  removeItemFromCart = (productId) =>{
     let cart = []
-    if(typeof window !== undefined ){
-       if(localStorage.getItem("cart")){
-        cart = JSON.parse(localStorage.getItem('cart'))
+    if(typeof window !== undefined   && isAutheticated()){
+        const  {user: {_id}} = isAutheticated()
+       if(localStorage.getItem(`${_id}`)){
+        cart = JSON.parse(localStorage.getItem(`${_id}`))
        }
 
        cart.map((product,i)=>{
@@ -37,11 +45,20 @@ export const  removeItemFromCart = (productId) =>{
            }
             
        })
-       localStorage.setItem("cart", JSON.stringify(cart))
+       localStorage.setItem(`${_id}`, JSON.stringify(cart))
 
   }
   return cart ;
-    
+}
 
-}  
+export const cartEmpty = next =>{
+    if(typeof window !==undefined  && isAutheticated()){
+        const  {user: {_id}} = isAutheticated()
+        localStorage.removeItem(`${_id}`)
+        next()
+    }
+}
+
+
+
 

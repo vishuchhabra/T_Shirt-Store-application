@@ -4,6 +4,8 @@ import { API } from "../backend";
 import Base from "./Base";
 import Card from "./card";
 import { loadCart } from "./helper/CartHelper";
+import { isAutheticated } from "../auth/helper";
+
 
 
 const  Cart = ()=> {
@@ -11,6 +13,7 @@ const  Cart = ()=> {
     const [products ,setProducts] = useState([])
 
     const [reload , setReload ] = useState(false)
+ 
 
 
     
@@ -22,7 +25,7 @@ const  Cart = ()=> {
             <div>
                 <h2>Your Cart !! </h2>
                 
-                { products &&  products.map((product , index)=>{
+                { products &&  products.map((product ,index)=>{
                     return(
                         <div className="text-center mb-4">
                     <Card
