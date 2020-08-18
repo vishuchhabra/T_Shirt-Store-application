@@ -25,9 +25,11 @@ const StripeCheckout = (
     const getFinalPrice = () =>{
 
         let amount =0 ;
-        products.map ( p =>{
-            amount = amount + p.price
-        })
+            if(products){
+            products.map ( p =>{
+                amount = amount + p.price
+            })
+        }  
         return amount 
     }
 
