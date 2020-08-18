@@ -19,7 +19,6 @@ const orderRoutes = require("./routes/order");
 const path = require('path')
 
 
-
 //DB Connection
 mongoose
   .connect(process.env.DATABASE, {
