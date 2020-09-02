@@ -7,7 +7,6 @@ import { API } from '../backend'
 import {createOrder } from './helper/orderHelper'
 
 
-
 const StripeCheckout = (
     {products ,setReload = f=> f, reload= undefined}
 ) =>{
@@ -18,7 +17,7 @@ const StripeCheckout = (
         error:"",
         address:""
     })
-
+    
     const token = isAutheticated() &&  isAutheticated().token
     const userId = isAutheticated() &&  isAutheticated().user._id
   
@@ -55,28 +54,22 @@ const StripeCheckout = (
             const orderData = {
                 products: products,
                 
-             }
+            }
 
-             //for storig the order in the data base
+            //for storig the order in the data base
             //  createOrder(userId, token, orderData);
-
-            
             
             cartEmpty(() =>{
                 console.log("Did we git as crash")
             })
             setReload(!reload )
-
-
-            
         })
         .catch(err =>console.log(err))
-        
     }
 
     const showStripeButton = () =>{
         return isAutheticated() ? (
-            <StripeCheck stripeKey="pk_test_1orIpbCKUzj4YO8Q1Lk4y9ML00UrTsyKgI"
+            <StripeCheck stripeKey="pk_test_51HMpxgA45ZcvZKqDUVyBnoJMZBOxbWhUpH4cgxNjssLHhkHksiKPMlJIP76cbUE0NfHYVtZlb7mDKQfbtFa4NMuP00MDs9BKEN"
             token={makePayment}
             amount={getFinalPrice()*100}
             name="Buy T-  Shirts"
