@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, HashRouter } from "react-router-dom";
 import Home from "./core/Home";
 import Signup from "./user/Signup";
 import Signin from "./user/Signin";
@@ -17,9 +17,11 @@ import Cart from "./core/Cart";
 import { createOrder } from "./core/helper/orderHelper";
 import CreateOrder from "./admin/createOrder";
 
+
 const Routes = () => {
   return (
     <BrowserRouter>
+    <HashRouter>
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/signup" exact component={Signup} />
@@ -35,6 +37,7 @@ const Routes = () => {
         <AdminRoute path="/admin/category/update/:categoryId" exact component={UpdateCategory}  />
         <AdminRoute path="/admin/orders" exact component={CreateOrder}  />
       </Switch> 
+      </HashRouter>
     </BrowserRouter>
   );
 };

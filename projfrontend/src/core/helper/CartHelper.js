@@ -17,7 +17,7 @@ export const addItemToCart = (item,next)=>{
         next()
     }
     else{
-        window.location.href = '/signin';
+        window.location.href = '/#/signin';
     }
 }
 
