@@ -137,7 +137,7 @@ const UpdateProduct = ({match}) => {
 
   const RedirectTime =() =>{
     setTimeout(function(){
-      window.location.href = '/admin/dashboard';
+      window.location.href = '#/admin/dashboard';
    }, 1000);
    }
   
@@ -226,7 +226,7 @@ const UpdateProduct = ({match}) => {
 
   return (
     <Base
-      title="Update a Product Here!"
+      title="Update Product Here!"
       description="Welcome To Product Updation Section"
       className="container bg-success p-4"
     >

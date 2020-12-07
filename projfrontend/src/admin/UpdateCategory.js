@@ -91,8 +91,8 @@ const UpdateCategory = ( {match}) => {
 
   return (
     <Base
-      title="Update a Category Here"
-      description="Add a New Name For Category"
+      title="Update Category Here"
+      description="Add New Name For Category"
       className="container bg-success p-4"
     >
       <div className="row bg-white rounded">

@@ -25,7 +25,7 @@ const  Cart = ()=> {
     const loadAllProducts = () =>{
         return(
             <div>
-                <h2>Your Cart !! </h2>
+                <h4>Your Cart items !!! </h4>
                 
                 { products &&  products.map((product ,index)=>{
                     return(
@@ -60,7 +60,7 @@ const  Cart = ()=> {
     
 
   return (
-    <Base title="Cart Page" description="Ready TO CheckOut">
+    <Base title="Your Cart" description="Ready to CheckOut">
       <div className="row">
           <div className="col-5" >
             {loadAllProducts()}

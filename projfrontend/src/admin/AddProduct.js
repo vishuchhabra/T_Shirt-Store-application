@@ -112,7 +112,7 @@ const AddProduct = () => {
 
  const RedirectTime =() =>{
   setTimeout(function(){
-    window.location.href = '/admin/dashboard';
+    window.location.href = '#/admin/dashboard';
  }, 1000);
  }
 
@@ -201,8 +201,8 @@ const AddProduct = () => {
 
   return (
     <Base
-      title="Add a Product Here!"
-      description="Welcome To Product Creation Section"
+      title="Add Product Here!"
+      description="Welcome!! Add Product details..."
       className="container bg-success p-4"
     >
       <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3">

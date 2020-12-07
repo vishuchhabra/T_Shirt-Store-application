@@ -69,7 +69,7 @@ const AddCategory = () => {
   const myCategoryForm = () => (
     <form>
       <div className="form-group">
-        <p className="lead">Enter The Category</p>
+        <p className="lead">Enter Name</p>
         <input
           type="text"
           className="form-control my-3"
@@ -88,8 +88,8 @@ const AddCategory = () => {
 
   return (
     <Base
-      title="Create a Category Here"
-      description="Add a New Category For New T-shirts"
+      title="Create New Category..."
+      description="Add New Category For New T-shirts"
       className="container bg-success p-4"
     >
       <div className="row bg-white rounded">

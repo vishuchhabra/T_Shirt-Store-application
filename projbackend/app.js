@@ -45,7 +45,7 @@ app.use("/api", orderRoutes);
 app.use('/api',StripeRoutes)
 
 //PORT
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4001;
 
 app.use(express.static(path.join(__dirname, 'build')));
 
