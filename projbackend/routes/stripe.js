@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const stripe = require("stripe")("sk_test_MMmmkkRPEaLmrYEREsyzrOiK003t74Dfpl")
+const stripe = require("stripe")("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")
 const uuid = require("uuid/v4")
 //router for stripe payment
 router.post('/stripepayment',(req, res)=>{
