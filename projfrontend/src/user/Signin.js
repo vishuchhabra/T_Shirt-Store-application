@@ -57,7 +57,7 @@ const Signin = () => {
   const loadingMessage = () => {
     return (
       loading && (
-        <div className="alert alert-info">
+        <div className="alert alert-success">
           <h2>Loading...</h2>
         </div>
       )
@@ -85,7 +85,7 @@ const Signin = () => {
         <div className="col-md-6 offset-sm-3 text-left">
           <form>
             <div className="form-group">
-              <label className="text-light">Email</label>
+              <label className="text-success font-weight-bold ">Email</label>
               <input
                 onChange={handleChange("email")}
                 value={email}
@@ -95,7 +95,7 @@ const Signin = () => {
             </div>
 
             <div className="form-group">
-              <label className="text-light">Password</label>
+              <label className="text-success font-weight-bold ">Password</label>
               <input
                 onChange={handleChange("password")}
                 value={password}

@@ -6,7 +6,7 @@ import {getProducts, getProduct, deleteProduct} from './helper/adminapicall'
 
 const ManageProducts = () => {
     const[products , setProducts] = useState([])
-
+    const [ele, setEle] = useState(1)
     const {user, token} = isAutheticated();
     const preload  = ()=>{
       getProducts().then(data=>{
@@ -44,13 +44,14 @@ const ManageProducts = () => {
         </Link>
         <div className="row">
           <div className="col-12">
-            <h3 className="text-center text-white my-3">All Products </h3>
-  
+            <h3 className="text-center text-danger my-3">All Products </h3>
+            <br/>
            {products.map((product ,index)=>{
              return (
+      
               <div key={index} className="row text-center mb-2 ">
               <div className="col-4">
-             <h3 className="text-white text-left">{product.name}</h3>
+             <h3 className="text-success text-left">{product.name} ({product.updatedAt.slice(0,10)})</h3>
               </div>
               <div className="col-4">
                 <Link

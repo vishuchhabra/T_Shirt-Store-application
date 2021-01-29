@@ -10,6 +10,7 @@ import StripeCheckout from "./StripeCheckout";
 
 
 
+
 const  Cart = ()=> {
 
     const [products ,setProducts] = useState([])
@@ -25,8 +26,8 @@ const  Cart = ()=> {
     const loadAllProducts = () =>{
         return(
             <div>
-                <h4>Your Cart items !!! </h4>
-                
+                <h4 className="text-success">Your Cart items !!! </h4>
+                <br/>
                 { products &&  products.map((product ,index)=>{
                     return(
                         <div className="text-center mb-4">

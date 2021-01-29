@@ -45,7 +45,7 @@ const Signup = () => {
         <div className="col-md-6 offset-sm-3 text-left">
           <form>
             <div className="form-group">
-              <label className="text-light">Name</label>
+              <label className="text-success font-weight-bold ">Name</label>
               <input
                 className="form-control"
                 onChange={handleChange("name")}
@@ -54,7 +54,7 @@ const Signup = () => {
               />
             </div>
             <div className="form-group">
-              <label className="text-light">Email</label>
+              <label className="text-success font-weight-bold ">Email</label>
               <input
                 className="form-control"
                 onChange={handleChange("email")}
@@ -64,7 +64,7 @@ const Signup = () => {
             </div>
 
             <div className="form-group">
-              <label className="text-light">Password</label>
+              <label className="text-success font-weight-bold ">Password</label>
               <input
                 onChange={handleChange("password")}
                 className="form-control"
@@ -86,7 +86,7 @@ const Signup = () => {
     <div className="row">
     <div className="col-md-6 offset-sm-3 text-left">
      <div className="alert alert-success" style={{display:success? "": "none"}}> 
-    New Account was created Successfully, Please <Link  to="/signin"> Login Here</Link></div>
+    New Account created Successfully, Please <Link  to="/signin"> Login Here</Link></div>
      </div></div>
    )}
 

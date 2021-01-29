@@ -32,17 +32,17 @@ useEffect(()=>{
     
 
   return (
-    <Base title="Your Store" description="Welcome To The T-shirt Store">
+    <Base title="Just Having Satisfied Customers Isn’t Good Enough Anymore" description="- Ken Blanchard - Mollie Beck">
       <div className="row text-center">
         <div className="col-12 text-center">
-       <h3 className="text-white">
+       <h3 className="text-success">
         Hey , We Are Selling Here .....
        </h3>
        </div>
        <div className="row">
          {products.map((product, index)=>{
            return(
-             <div key={index} className="col-lg-4 mb-4 mt-4">
+             <div key={index} className="col-lg-4 col-md-6 mb-4 mt-4">
               <Card product={product}/>
              </div>
            )

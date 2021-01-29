@@ -46,14 +46,15 @@ const ManageCategories = () => {
     </Link>
     <div className="row">
       <div className="col-12">
-        <h3 className="text-center text-white my-3">Total Categories</h3>
+        <h3 className="text-center text-danger my-3">Total Categories</h3>
+        <br/>
         {
           categories.map((category,index)=>{
            return(
             
             <div key={index} className="row text-center mb-2 ">
             <div className="col-4">
-            <h3 className="text-white text-left"> {category.name}</h3>
+            <h3 className="text-success text-left"> {category.name}</h3>
             </div>
             <div className="col-4">
               <Link

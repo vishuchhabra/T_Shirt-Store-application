@@ -48,7 +48,7 @@ const UpdateCategory = ( {match}) => {
   const loadingMessage = () => {
     return (
       loading && (
-        <div className="alert alert-info">
+        <div className="alert alert-success">
           <h2>Loading...</h2>
         </div>
       )

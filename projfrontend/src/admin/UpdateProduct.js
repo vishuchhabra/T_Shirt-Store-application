@@ -128,7 +128,7 @@ const UpdateProduct = ({match}) => {
   const loadingMessage = () => {
     return (
       loading && (
-        <div className="alert alert-info">
+        <div className="alert alert-success">
           <h2>Loading...</h2>
         </div>
       )
@@ -233,7 +233,7 @@ const UpdateProduct = ({match}) => {
       <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3">
         Admin Home
       </Link>
-      <div className="row bg-dark text-white rounded">
+      <div className="row bg-white text-success rounded">
         <div className="col-md-8 offset-md-2">
           {loadingMessage()}
           {redirect()}
